@@ -1,7 +1,7 @@
 import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 
-export default function HomeScreen() {
+export default function TeamScreen() {
     return (
         <View style={styles.container}>
             <View style={styles.header}>

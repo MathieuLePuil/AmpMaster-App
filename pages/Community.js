@@ -1,11 +1,11 @@
 import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 
-export default function HomeScreen() {
+export default function CommunityScreen() {
     return (
         <View style={styles.container}>
             <View style={styles.header}>
-                <Text style={styles.text}>Account</Text>
+                <Text style={styles.text}>Community</Text>
             </View>
         </View>
     );

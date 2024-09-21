@@ -1,15 +1,13 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet } from 'react-native';
+import {StatusBar} from 'expo-status-bar';
+import {StyleSheet} from 'react-native';
 import Home from './pages/Home';
-import Search from './pages/Search';
-import Team from './pages/Team';
+import Community from './pages/Community';
+import New from './pages/New';
 import * as React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import Pokemon from './pages/Pokemon';
-import Settings from './pages/Settings';
-import Photo from './pages/Photo';
+import Account from './pages/Account';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
 const Stack = createNativeStackNavigator();
@@ -22,15 +20,7 @@ function HomeStack() {
             <Stack.Screen
                 name="Home"
                 component={Home}
-                options={{ headerShown: false }}
-            />
-            <Stack.Screen
-                name="Pokemon"
-                component={Pokemon}
-            />
-            <Stack.Screen
-                name="Photo"
-                component={Photo}
+                options={{headerShown: true}}
             />
         </Stack.Navigator>
     );
@@ -42,43 +32,43 @@ export default function App() {
             <StatusBar style="auto" />
             <Tab.Navigator>
                 <Tab.Screen
-                    name="Accueil"
+                    name="Mes réglages"
                     component={HomeStack}
                     options={{
                         headerShown: false,
                         tabBarIcon: ({ color, size }) => (
-                            <Ionicons name="home" color={color} size={size} />
+                            <Ionicons name="musical-notes-outline" color={color} size={size} />
                         ),
                     }}
                 />
                 <Tab.Screen
-                    name="Recherche"
-                    component={Search}
+                    name="Communauté"
+                    component={Community}
                     options={{
-                        headerShown: false,
+                        headerShown: true,
                         tabBarIcon: ({ color, size }) => (
-                            <Ionicons name="search" color={color} size={size} />
+                            <Ionicons name="chatbubbles-outline" color={color} size={size} />
                         ),
                     }}
                 />
                 <Tab.Screen
-                    name="Ma Team"
-                    component={Team}
+                    name="New"
+                    component={New}
                     options={{
-                        headerShown: false,
+                        headerShown: true,
                         tabBarIcon: ({ color, size }) => (
-                            <Ionicons name="people-circle-outline" color={color} size={size} />
+                            <Ionicons name="add-circle-outline" color={color} size={size} />
                         ),
                     }}
                     key={Math.random()}
                 />
                 <Tab.Screen
-                    name="Paramètres"
-                    component={Settings}
+                    name="Mon compte"
+                    component={Account}
                     options={{
-                        headerShown: false,
+                        headerShown: true,
                         tabBarIcon: ({ color, size }) => (
-                            <Ionicons name="settings-outline" color={color} size={size} />
+                            <Ionicons name="person-circle-outline" color={color} size={size} />
                         ),
                     }}
                     key={Math.random()}

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, Button, StyleSheet, Alert } from 'react-native';
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 export default function Login({ navigation }) {
     const [username, setUsername] = useState('');
@@ -18,7 +19,7 @@ export default function Login({ navigation }) {
 
             if (response.ok) {
                 const data = await response.json();
-                // Logique de connexion réussie, par exemple, stocker le token et rediriger
+                await AsyncStorage.setItem('token', data.token);
                 navigation.replace('Home');
             } else {
                 const errorData = await response.json();

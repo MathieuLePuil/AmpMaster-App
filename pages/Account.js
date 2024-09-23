@@ -1,12 +1,11 @@
-import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
+import { View, Text, Button, StyleSheet } from 'react-native';
 
-export default function TeamScreen() {
+export default function Account({ onLogout }) {
     return (
         <View style={styles.container}>
-            <View style={styles.header}>
-                <Text style={styles.text}>Account</Text>
-            </View>
+            <Text style={styles.title}>Mon compte</Text>
+            <Button title="Se déconnecter" onPress={onLogout} />
         </View>
     );
 }
@@ -14,20 +13,12 @@ export default function TeamScreen() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#F5F5F5',
-        width: '100%',
-        height: '100%',
+        justifyContent: 'center',
+        padding: 16,
     },
-    header: {
-        alignItems: 'center',
-        marginBottom: 20,
-        backgroundColor: 'black',
-        width: '100%',
-        paddingTop: 10,
-    },
-    text: {
+    title: {
         fontSize: 24,
-        padding: 10,
-        color: 'white',
+        marginBottom: 16,
+        textAlign: 'center',
     },
 });
